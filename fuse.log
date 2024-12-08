@@ -1,0 +1,22 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/ALU_test_isim_beh.exe -prj C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/ALU_test_beh.prj work.ALU_test 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/ALU.vhd" into library work
+Parsing VHDL file "C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/ALU_test.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package numeric_std
+Compiling architecture behavioral of entity ALU [\ALU(1)\]
+Compiling architecture behavior of entity alu_test
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 8 VHDL Units
+Built simulation executable C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/ALU_test_isim_beh.exe
+Fuse Memory Usage: 36680 KB
+Fuse CPU Usage: 655 ms
