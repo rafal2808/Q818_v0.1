@@ -1,0 +1,509 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Reading design: CORE_MS2.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "CORE_MS2.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "CORE_MS2"
+Output Format                      : NGC
+Target Device                      : xc3s50a-5-tq144
+
+---- Source Options
+Top Module Name                    : CORE_MS2
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/ALU.vhd" in Library work.
+Architecture behavioral of Entity alu is up to date.
+Compiling vhdl file "C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/CORE_MS2.vhd" in Library work.
+Architecture behavioral of Entity core_ms2 is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <CORE_MS2> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <ALU> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <CORE_MS2> in library <work> (Architecture <behavioral>).
+Entity <CORE_MS2> analyzed. Unit <CORE_MS2> generated.
+
+Analyzing Entity <ALU> in library <work> (Architecture <behavioral>).
+Entity <ALU> analyzed. Unit <ALU> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <ALU>.
+    Related source file is "C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/ALU.vhd".
+    Found 8-bit comparator less for signal <STS_0$cmp_lt0000> created at line 118.
+    Found 8-bit comparator greater for signal <STS_1$cmp_gt0000> created at line 119.
+    Found 8-bit comparator equal for signal <STS_2$cmp_eq0000> created at line 121.
+    Found 8-bit xor3 for signal <SUM>.
+    Found 8-bit 4-to-1 multiplexer for signal <WML>.
+    Found 1-bit xor2 for signal <WUL<30>>.
+    Found 1-bit xor2 for signal <WUL<26>>.
+    Found 1-bit xor2 for signal <WUL<22>>.
+    Found 1-bit xor2 for signal <WUL<18>>.
+    Found 1-bit xor2 for signal <WUL<14>>.
+    Found 1-bit xor2 for signal <WUL<10>>.
+    Found 1-bit xor2 for signal <WUL<6>>.
+    Found 1-bit xor2 for signal <WUL<2>>.
+    Summary:
+	inferred   3 Comparator(s).
+	inferred   8 Multiplexer(s).
+	inferred   8 Xor(s).
+Unit <ALU> synthesized.
+
+
+Synthesizing Unit <CORE_MS2>.
+    Related source file is "C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/CORE_MS2.vhd".
+    Found 4-bit register for signal <MS2_STS>.
+    Found 8-bit register for signal <Aout>.
+    Found 8-bit register for signal <Bout>.
+    Found 6-bit register for signal <Cout>.
+    Found 8-bit 4-to-1 multiplexer for signal <MUXout>.
+    Summary:
+	inferred  26 D-type flip-flop(s).
+	inferred   8 Multiplexer(s).
+Unit <CORE_MS2> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 9
+ 1-bit register                                        : 6
+ 4-bit register                                        : 1
+ 8-bit register                                        : 2
+# Comparators                                          : 3
+ 8-bit comparator equal                                : 1
+ 8-bit comparator greater                              : 1
+ 8-bit comparator less                                 : 1
+# Multiplexers                                         : 9
+ 1-bit 4-to-1 multiplexer                              : 8
+ 8-bit 4-to-1 multiplexer                              : 1
+# Xors                                                 : 16
+ 1-bit xor2                                            : 8
+ 1-bit xor3                                            : 8
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 26
+ Flip-Flops                                            : 26
+# Comparators                                          : 3
+ 8-bit comparator equal                                : 1
+ 8-bit comparator greater                              : 1
+ 8-bit comparator less                                 : 1
+# Multiplexers                                         : 9
+ 1-bit 4-to-1 multiplexer                              : 8
+ 8-bit 4-to-1 multiplexer                              : 1
+# Xors                                                 : 16
+ 1-bit xor2                                            : 8
+ 1-bit xor3                                            : 8
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <CORE_MS2> ...
+
+Optimizing unit <ALU> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block CORE_MS2, actual ratio is 10.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 26
+ Flip-Flops                                            : 26
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : CORE_MS2.ngr
+Top Level Output File Name         : CORE_MS2
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 46
+
+Cell Usage :
+# BELS                             : 151
+#      INV                         : 1
+#      LUT2                        : 19
+#      LUT2_D                      : 1
+#      LUT3                        : 40
+#      LUT4                        : 46
+#      LUT4_D                      : 4
+#      LUT4_L                      : 1
+#      MUXCY                       : 16
+#      MUXF5                       : 22
+#      VCC                         : 1
+# FlipFlops/Latches                : 26
+#      FDC                         : 26
+# Clock Buffers                    : 4
+#      BUFGP                       : 4
+# IO Buffers                       : 42
+#      IBUF                        : 30
+#      OBUF                        : 12
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s50atq144-5 
+
+ Number of Slices:                       58  out of    704     8%  
+ Number of Slice Flip Flops:             22  out of   1408     1%  
+ Number of 4 input LUTs:                112  out of   1408     7%  
+ Number of IOs:                          46
+ Number of bonded IOBs:                  46  out of    108    42%  
+    IOB Flip Flops:                       4
+ Number of GCLKs:                         4  out of     24    16%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+MS2_ms<3>                          | BUFGP                  | 8     |
+MS2_ms<1>                          | BUFGP                  | 6     |
+MS2_ms<2>                          | BUFGP                  | 8     |
+MS2_ms<0>                          | BUFGP                  | 4     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+MS2_ms<6>                          | IBUF                   | 8     |
+MS2_ms<7>                          | IBUF                   | 8     |
+MS2_ms<5>                          | IBUF                   | 6     |
+MS2_ms<4>                          | IBUF                   | 4     |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 7.811ns (Maximum Frequency: 128.022MHz)
+   Minimum input arrival time before clock: 4.055ns
+   Maximum output required time after clock: 12.636ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'MS2_ms<3>'
+  Clock period: 7.811ns (frequency: 128.022MHz)
+  Total number of paths / destination ports: 203 / 8
+-------------------------------------------------------------------------
+Delay:               7.811ns (Levels of Logic = 8)
+  Source:            Aout_0 (FF)
+  Destination:       Aout_6 (FF)
+  Source Clock:      MS2_ms<3> rising
+  Destination Clock: MS2_ms<3> rising
+
+  Data Path: Aout_0 to Aout_6
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              8   0.495   0.666  Aout_0 (Aout_0)
+     LUT3:I2->O            5   0.561   0.538  U1/C_1_or00001 (U1/C<1>)
+     MUXF5:S->O            7   0.652   0.602  U1/C_3_or00001 (U1/C<3>)
+     MUXF5:S->O            2   0.652   0.382  U1/WM_6_mux0000_SW0 (N28)
+     LUT4:I3->O            4   0.561   0.522  U1/WM_6_mux0000 (U1/WM<6>)
+     LUT3:I2->O            1   0.561   0.000  U1/Y_6_or0000_F (N63)
+     MUXF5:I0->O           2   0.229   0.403  U1/Y_6_or0000 (MS2_OUT_6_OBUF)
+     LUT3:I2->O            1   0.561   0.000  Mmux_MUXout_36 (Mmux_MUXout_36)
+     MUXF5:I1->O           1   0.229   0.000  Mmux_MUXout_2_f5_5 (MUXout<6>)
+     FDC:D                     0.197          Aout_6
+    ----------------------------------------
+    Total                      7.811ns (4.698ns logic, 3.113ns route)
+                                       (60.1% logic, 39.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'MS2_ms<3>'
+  Total number of paths / destination ports: 54 / 8
+-------------------------------------------------------------------------
+Offset:              4.055ns (Levels of Logic = 5)
+  Source:            MS2_ms<8> (PAD)
+  Destination:       Aout_7 (FF)
+  Destination Clock: MS2_ms<3> rising
+
+  Data Path: MS2_ms<8> to Aout_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            19   0.824   1.030  MS2_ms_8_IBUF (MS2_ms_8_IBUF)
+     LUT4:I0->O            1   0.561   0.000  U1/Y_7_or00001_SW0_G (N66)
+     MUXF5:I1->O           1   0.229   0.423  U1/Y_7_or00001_SW0 (N36)
+     LUT3:I1->O            1   0.562   0.000  Mmux_MUXout_37 (Mmux_MUXout_37)
+     MUXF5:I1->O           1   0.229   0.000  Mmux_MUXout_2_f5_6 (MUXout<7>)
+     FDC:D                     0.197          Aout_7
+    ----------------------------------------
+    Total                      4.055ns (2.602ns logic, 1.453ns route)
+                                       (64.2% logic, 35.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'MS2_ms<1>'
+  Total number of paths / destination ports: 430 / 8
+-------------------------------------------------------------------------
+Offset:              12.636ns (Levels of Logic = 8)
+  Source:            Cout_1 (FF)
+  Destination:       MS2_OUT<6> (PAD)
+  Source Clock:      MS2_ms<1> rising
+
+  Data Path: Cout_1 to MS2_OUT<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             21   0.495   1.025  Cout_1 (Cout_1)
+     LUT3:I1->O            3   0.562   0.517  U1/UW_0_or00001 (U1/UW<0>)
+     LUT3:I1->O            5   0.562   0.538  U1/C_1_or00001 (U1/C<1>)
+     MUXF5:S->O            7   0.652   0.602  U1/C_3_or00001 (U1/C<3>)
+     MUXF5:S->O            2   0.652   0.382  U1/WM_6_mux0000_SW0 (N28)
+     LUT4:I3->O            4   0.561   0.522  U1/WM_6_mux0000 (U1/WM<6>)
+     LUT3:I2->O            1   0.561   0.000  U1/Y_6_or0000_F (N63)
+     MUXF5:I0->O           2   0.229   0.380  U1/Y_6_or0000 (MS2_OUT_6_OBUF)
+     OBUF:I->O                 4.396          MS2_OUT_6_OBUF (MS2_OUT<6>)
+    ----------------------------------------
+    Total                     12.636ns (8.670ns logic, 3.966ns route)
+                                       (68.6% logic, 31.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'MS2_ms<2>'
+  Total number of paths / destination ports: 184 / 8
+-------------------------------------------------------------------------
+Offset:              12.256ns (Levels of Logic = 8)
+  Source:            Bout_0 (FF)
+  Destination:       MS2_OUT<6> (PAD)
+  Source Clock:      MS2_ms<2> rising
+
+  Data Path: Bout_0 to MS2_OUT<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              5   0.495   0.646  Bout_0 (Bout_0)
+     LUT3:I0->O            3   0.561   0.517  U1/UW_0_or00001 (U1/UW<0>)
+     LUT3:I1->O            5   0.562   0.538  U1/C_1_or00001 (U1/C<1>)
+     MUXF5:S->O            7   0.652   0.602  U1/C_3_or00001 (U1/C<3>)
+     MUXF5:S->O            2   0.652   0.382  U1/WM_6_mux0000_SW0 (N28)
+     LUT4:I3->O            4   0.561   0.522  U1/WM_6_mux0000 (U1/WM<6>)
+     LUT3:I2->O            1   0.561   0.000  U1/Y_6_or0000_F (N63)
+     MUXF5:I0->O           2   0.229   0.380  U1/Y_6_or0000 (MS2_OUT_6_OBUF)
+     OBUF:I->O                 4.396          MS2_OUT_6_OBUF (MS2_OUT<6>)
+    ----------------------------------------
+    Total                     12.256ns (8.669ns logic, 3.587ns route)
+                                       (70.7% logic, 29.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'MS2_ms<3>'
+  Total number of paths / destination ports: 189 / 8
+-------------------------------------------------------------------------
+Offset:              11.197ns (Levels of Logic = 7)
+  Source:            Aout_0 (FF)
+  Destination:       MS2_OUT<6> (PAD)
+  Source Clock:      MS2_ms<3> rising
+
+  Data Path: Aout_0 to MS2_OUT<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              8   0.495   0.666  Aout_0 (Aout_0)
+     LUT3:I2->O            5   0.561   0.538  U1/C_1_or00001 (U1/C<1>)
+     MUXF5:S->O            7   0.652   0.602  U1/C_3_or00001 (U1/C<3>)
+     MUXF5:S->O            2   0.652   0.382  U1/WM_6_mux0000_SW0 (N28)
+     LUT4:I3->O            4   0.561   0.522  U1/WM_6_mux0000 (U1/WM<6>)
+     LUT3:I2->O            1   0.561   0.000  U1/Y_6_or0000_F (N63)
+     MUXF5:I0->O           2   0.229   0.380  U1/Y_6_or0000 (MS2_OUT_6_OBUF)
+     OBUF:I->O                 4.396          MS2_OUT_6_OBUF (MS2_OUT<6>)
+    ----------------------------------------
+    Total                     11.197ns (8.107ns logic, 3.090ns route)
+                                       (72.4% logic, 27.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'MS2_ms<0>'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              5.248ns (Levels of Logic = 1)
+  Source:            MS2_STS_3 (FF)
+  Destination:       MS2_STS<3> (PAD)
+  Source Clock:      MS2_ms<0> rising
+
+  Data Path: MS2_STS_3 to MS2_STS<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.495   0.357  MS2_STS_3 (MS2_STS_3)
+     OBUF:I->O                 4.396          MS2_STS_3_OBUF (MS2_STS<3>)
+    ----------------------------------------
+    Total                      5.248ns (4.891ns logic, 0.357ns route)
+                                       (93.2% logic, 6.8% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.98 secs
+ 
+--> 
+
+Total memory usage is 261572 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
