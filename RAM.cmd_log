@@ -1,0 +1,14 @@
+xst -intstyle ise -ifn "C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/RAM.xst" -ofn "C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/RAM.syr" 
+xst -intstyle ise -ifn "C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/RAM.xst" -ofn "C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/RAM.syr" 
+xst -intstyle ise -ifn "C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/RAM.xst" -ofn "C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/RAM.syr" 
+xst -intstyle ise -ifn "C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/RAM.xst" -ofn "C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/RAM.syr" 
+xst -intstyle ise -ifn "C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/RAM.xst" -ofn "C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/RAM.syr" 
+xst -intstyle ise -ifn "C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/RAM.xst" -ofn "C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/RAM.syr" 
+xst -intstyle ise -ifn "C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/RAM.xst" -ofn "C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/RAM.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s50a-tq144-5 RAM.ngc RAM.ngd  
+map -intstyle ise -p xc3s50a-tq144-5 -cm area -ir off -pr off -c 100 -o RAM_map.ncd RAM.ngd RAM.pcf 
+par -w -intstyle ise -ol high -t 1 RAM_map.ncd RAM.ncd RAM.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml RAM.twx RAM.ncd -o RAM.twr RAM.pcf 
+bitgen -intstyle ise -f RAM.ut RAM.ncd 
+xst -intstyle ise -ifn "C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/RAM.xst" -ofn "C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/RAM.syr" 
+xst -intstyle ise -ifn "C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/RAM.xst" -ofn "C:/Users/ja/Desktop/work/FPGA/projekty/DCEQ816/RAM.syr" 
